@@ -18,6 +18,15 @@ class Student:
             raise ValueError("credits tidak boleh negatif")
         self._credits += n
 
+    def classify(self):
+        if self.__gpa >= 3.5:
+            return "Cum Laude"
+        elif self.__gpa >= 2.5:
+            return "Good"
+        else:
+            return "Remedial"
+
+
 if __name__ == "__main__":
     s = Student("S100", "Ana", 3.1)
     print(s.name)
@@ -26,3 +35,4 @@ if __name__ == "__main__":
     s.add_credits(3)
     print(s.get_gpa())
     print(s._credits)
+    print("Status:", s.classify())
